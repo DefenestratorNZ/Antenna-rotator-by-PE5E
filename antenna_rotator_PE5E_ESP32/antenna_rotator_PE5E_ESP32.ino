@@ -15,7 +15,7 @@
 #include "dataset.h"
 dataset   *shared_data = new dataset;  // holds all shared data
 
-#include "ESPAsyncWebServer.h"
+#include "ESPAsyncWebSrv.h"
 AsyncWebServer http_server(shared_data->webserver_address);
 
 #include "rotctl_implementation.h"     // implementation of the rotctl protocol
@@ -30,8 +30,8 @@ Rotctl_impl rotctl;                    // translates rotctldata to actions
 
 #include "index.h"                     // HTML webpage contents
  
-const char* ssid = "Ziggo";
-const char* password = "Tijdelijk_Netwerk_Voor_Gasten#";
+const char* ssid = "DracosHome";
+const char* password = "564738291010";
  
 int         ledPin = 2    ; // built in led
 
