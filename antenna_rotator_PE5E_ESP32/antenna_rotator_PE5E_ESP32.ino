@@ -45,7 +45,7 @@ Hardware_mgmt hardware;
 void setup() {
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin, HIGH); // HIGH is off
-  Serial.begin(115200);
+  Serial.begin(9600);
   delay(10);
 
   rotctl.set_shared_data(shared_data);
@@ -73,29 +73,29 @@ void setup() {
   control_server->onClient(&handleNewClient, control_server);
  
 // Connect to WiFi network
-  Serial.println();
-  Serial.print("Connecting to ");
-  Serial.println(ssid);
+  //Serial.println();
+  //Serial.print("Connecting to ");
+  //Serial.println(ssid);
   WiFi.begin(ssid, password);
  
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
-     Serial.print(".");
+    // Serial.print(".");
   }
 
-  Serial.println("");
-  Serial.println("WiFi connected");
+  //Serial.println("");
+  //Serial.println("WiFi connected");
  
   // Start the servers
   http_server.begin();
   control_server->begin();
-  
+  /*
   Serial.println("http server and control server started");
   Serial.print("Use this URL to connect: ");
   Serial.print("http://");
   Serial.print(WiFi.localIP());
   Serial.println("/");
-
+*/
   hardware.setup();
 }
  

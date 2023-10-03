@@ -17,7 +17,9 @@ void Rotctl_impl::set_shared_data(dataset *data) {
 
  
 String Rotctl_impl::input_data(String request) {
-  Serial.println("received data in Rotctl_impl::data: ");
+  //Serial.println("received data in Rotctl_impl::data: ");
+  //request.replace("\set_pos", "");
+  request.remove(0,9);
   Serial.println(request); 
   String reply = "";
 
